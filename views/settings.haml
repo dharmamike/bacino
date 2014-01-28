@@ -1,0 +1,51 @@
+%h2 Settings
+
+%h3
+  Version:
+  = @version['Version']
+%h3
+  Git Commit:
+  = @version['GitCommit']
+%h3
+  Go Version:
+  = @version['GoVersion']
+
+
+%table.table.table-striped
+  %tr
+    %td
+      Containers:
+    %td
+      = @info['Containers']
+  %tr
+    %td
+      Images:
+    %td
+      = @info['Images']
+  %tr
+    %td
+      Debug:
+    %td
+      = @info['Debug']
+  %tr
+    %td
+      NFd:
+    %td
+      = @info['NFd']
+  %tr
+    %td
+      NGoroutines
+    %td
+      = @info['NGoroutines']
+  %tr
+    %td
+      Memory Limit
+    %td
+      = @info['MemoryLimit']
+  %tr
+    %td
+      Swap Limit
+    %td
+      = @info['SwapLimit']
+/
+  = @info

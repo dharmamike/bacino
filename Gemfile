@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'activesupport'
+gem 'actionview'
+gem 'rack-contrib'
+gem 'i18n'
+gem 'docker-api', require: 'docker'
+gem 'haml'
+gem 'hashie'

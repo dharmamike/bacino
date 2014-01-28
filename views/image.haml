@@ -1,0 +1,61 @@
+%h2
+  Image&nbsp;#{@image.id}
+
+%table.table.table-striped
+  %tr
+    %td
+      Created:
+    %td
+      = @image.created_at.to_formatted_s(:mdy)
+  %tr
+    %td
+      Parent:
+    %td
+      %a{href: "/images/#{@image.parent_id}"}
+        = @image.parent_id.truncate(12, omission: '')
+  %tr
+    %td
+      Container:
+    %td
+      %a{href: "/containers/#{@image.container_id}"}
+        = @image.container_id.truncate(12, omission: '')
+  %tr
+    %td
+      Hostname:
+    %td
+      = @image.hostname.truncate(12, omission: '')
+  %tr
+    %td
+      User:
+    %td
+      = @image.user
+  %tr
+    %td
+      Cmd:
+    %td
+      = @image.cmd
+  %tr
+    %td
+      Volumes:
+    %td
+      = @image.volumes
+  %tr
+    %td
+      Volumes from:
+    %td
+      = @image.volumes_from
+
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      History
+  .panel-body
+    %ul
+      - @image.history.each do |h|
+        %li
+          %strong
+            #{h['Id'].truncate(12, omission: '')}:
+          Created:
+          = Time.at(h['Created']).to_formatted_s(:mdy)
+          Created by:
+          = h['CreatedBy']
