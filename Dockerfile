@@ -1,4 +1,4 @@
-FROM binaryphile/ruby:2.2.0-p247
+FROM binaryphile/ruby:2.0.0-p247
 
 RUN mkdir /var/app
 ADD . /var/app/bacino
